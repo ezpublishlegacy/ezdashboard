@@ -1,0 +1,43 @@
+Portal extension
+-------------------------------
+
+Installation instructions:
+
+This is an alpha version! The extension works best on Firefox.
+
+- The alpha version of the extension requires you have Flash installed on your browser.
+  This will hopefully change in the future. The Flash component is used to load files.
+
+- Unpack the archive and place the 'portal' folder in the 'extension' folder.
+
+- Open the file /settings/override/site.ini.append(.php) and add the portal
+  extension to the list of active extensions:
+
+	[ExtensionSettings]
+	ActiveExtensions[]=portal
+
+- Open the file /settings/siteaccess/[admin_siteaccess]/toolbar.ini.append.php 
+  and modify [Toolbar_admin_right] as follows: 
+  
+  [Toolbar_admin_right]
+  Tool[]
+  Tool[]=admin_portal
+  Tool[]=admin_current_user
+  Tool[]=admin_bookmarks
+  
+- Your admin home page will now have a button at the top of /content/view/full/2: 'Switch to portal view'.
+  With this button you may switch between the 'normal' and 'portal' view.
+  
+Known issues:
+- YUI 3.0 Portal has some issues with Internet Explorer when reloading the page;
+- Flash component needs to be replaced with Javascript in the future;
+- Javascript within the widgets is not supported;
+- The definition of the widgets should probably be moved from portal.tpl to a settings file;
+- Not sure which parts of the YUI 3.0 are really required;
+- RSS icon needs to be replaced with something more meaningful;
+- Policy checks have not been implemented yet around the available widgets;
+- Preferences are stored in a cookie, and not as ezpreference.
+  
+If you have any questions and/or comments and/or fixes, please send an email to info@contactivity.com.
+  
+  
